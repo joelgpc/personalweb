@@ -1,0 +1,124 @@
+{
+  "skills": {
+    "title": "Habilidades y Experiencia",
+    "subtitle": "Combinando experiencia técnica con visión estratégica",
+    "categories": {
+      "salesMarketing": "Ventas y Marketing",
+      "aiAutomation": "IA y Automatización",
+      "businessAnalysis": "Análisis de Sistemas de Negocio",
+      "dataReporting": "Datos y Reportes"
+    },
+    "items": {
+      "leadGeneration": {
+        "name": "Generación de Leads",
+        "description": "Estrategias para captar y cualificar clientes potenciales."
+      },
+      "growthStrategies": {
+        "name": "Estrategias de Crecimiento",
+        "description": "Metodologías de crecimiento escalables y sostenibles."
+      },
+      "digitalCampaigns": {
+        "name": "Campañas Digitales",
+        "description": "Gestión efectiva de campañas de marketing online."
+      },
+      "chatbotDevelopment": {
+        "name": "Desarrollo de Chatbots",
+        "description": "Soluciones de chatbot inteligentes para mejorar la interacción."
+      },
+      "aiProcessOptimization": {
+        "name": "Optimización con IA",
+        "description": "Mejora de procesos mediante inteligencia artificial."
+      },
+      "workflowAutomation": {
+        "name": "Automatización de Flujos",
+        "description": "Automatización de tareas repetitivas para mayor eficiencia."
+      },
+      "requirementGathering": {
+        "name": "Captura de Requisitos",
+        "description": "Recopilación y documentación de requisitos de proyecto."
+      },
+      "systemMapping": {
+        "name": "Mapeo de Sistemas",
+        "description": "Visualización y comprensión de arquitecturas de sistema."
+      },
+      "solutionDesign": {
+        "name": "Diseño de Soluciones",
+        "description": "Creación de soluciones efectivas e innovadoras."
+      },
+      "biTools": {
+        "name": "Herramientas BI",
+        "description": "Uso de herramientas de Business Intelligence para insights."
+      },
+      "advancedReporting": {
+        "name": "Reportes Avanzados",
+        "description": "Creación de informes detallados y perspicaces."
+      },
+      "dashboardAutomation": {
+        "name": "Automatización de Dashboards",
+        "description": "Automatización de actualizaciones y feeds de datos."
+      }
+    }
+  },
+  "navbar": {
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "portfolio": "Portfolio",
+    "contact": "Contacto",
+    "language": "Language",
+    "languageTooltip": "Change language"
+  },
+  "hero": {
+    "title": "Soy Joel Mercado",
+    "subtitle": "Consultor Técnico Estratégico | Ventas y Marketing | Automatización con IA",
+    "linkedinButton": "Conectar en LinkedIn",
+    "viewPortfolioButton": "Ver Portfolio"
+  },
+  "portfolio": {
+    "title": "Mi Portfolio",
+    "subtitle": "Una selección de proyectos que muestran mis capacidades y experiencia",
+    "viewDetails": "Ver Detalles",
+    "projects": [
+      {
+        "title": "Estrategia de Crecimiento E-commerce",
+        "category": "Estrategia de Marketing",
+        "description": "Desarrollo e implementación de estrategia de crecimiento para plataforma e-commerce.",
+        "metrics": {
+          "roi": "+300%",
+          "timeline": "6 Meses",
+          "growth": "150%"
+        }
+      },
+      {
+        "title": "Reestructuración de Equipo de Ventas",
+        "category": "Gestión de Ventas",
+        "description": "Reestructuración de equipo de ventas para mejorar eficiencia y rendimiento.",
+        "metrics": {
+          "roi": "+200%",
+          "timeline": "4 Meses",
+          "efficiency": "+40%"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Hablemos sobre tu proyecto o consulta",
+    "nameLabel": "Nombre",
+    "emailLabel": "Email",
+    "messageLabel": "Mensaje",
+    "inquiryLabel": "Tipo de Consulta",
+    "inquiryTypes": {
+      "sales": "Consulta de Ventas",
+      "marketing": "Consulta de Marketing",
+      "custom": "Consulta Personalizada"
+    },
+    "previewTitle": "Vista Previa",
+    "prevButton": "Anterior",
+    "nextButton": "Siguiente",
+    "nameRequired": "Por favor, introduce tu nombre.",
+    "emailInvalid": "Por favor, introduce un email válido.",
+    "messageRequired": "Por favor, introduce tu mensaje.",
+    "messageSent": "¡Mensaje enviado! Te responderemos en menos de 24 horas.",
+    "messageSuccess": "¡Gracias por tu mensaje!"
+  }
+}

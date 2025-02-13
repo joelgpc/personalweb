@@ -1,0 +1,27 @@
+{
+  "contact": {
+    "formLabel": "Contact Form",
+    "submitButton": "Send Message",
+    "loading": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Something went wrong. Please try again.",
+    "captchaRequired": "Please complete the CAPTCHA verification.",
+    "captchaError": "CAPTCHA verification failed. Please try again.",
+    "captchaLabel": "CAPTCHA Verification",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Your Message",
+    "placeholders": {
+      "name": "Enter your name",
+      "email": "Enter your email address",
+      "message": "Write your message here"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "formInvalid": "Please fill in all required fields correctly"
+    }
+  }
+}

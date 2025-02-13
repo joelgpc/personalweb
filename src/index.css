@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --text: #0b185b;
+    --primary: #3272d2;
+    --secondary: #3c7e41;
+    --accent: #be906a;
+    --primary-color: #3272d2;
+    --transition-duration: 0.3s;
+    --glassmorphism-bg: rgba(255, 255, 255, 0.7);
+    --glassmorphism-bg-dark: rgba(11, 37, 28, 0.7);
+    --blur-strength: 10px;
+  }
+
+  /* Estilos de foco consistentes */
+  * {
+    outline: none !important;
+    transition: background-color var(--transition-duration),
+                color var(--transition-duration),
+                border-color var(--transition-duration),
+                box-shadow var(--transition-duration);
+  }
+
+  *:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px var(--primary);
+    border-radius: 4px;
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .dark {
+    --background: #0b251c;
+    --text: #aaeb94;
+    --primary: #5690d4;
+    --secondary: #69bd62;
+    --accent: #855645;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-[#0b185b] dark:text-[#aaeb94];
+    background-color: var(--background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  p, li, a {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30;
+    background: var(--glassmorphism-bg);
+    backdrop-filter: blur(var(--blur-strength));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-duration) ease;
+  }
+
+  .dark .glass-effect {
+    background: var(--glassmorphism-bg-dark);
+  }
+
+  .glass-effect:hover {
+    backdrop-filter: blur(calc(var(--blur-strength) * 1.5));
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .glass-effect:hover {
+    background: rgba(11, 37, 28, 0.8);
+  }
+
+  .skill-card {
+    @apply relative overflow-hidden rounded-xl;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  .dark .skill-card::before {
+    background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.05)
+    );
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .custom-cursor {
+    @apply fixed w-8 h-8 rounded-full pointer-events-none z-50
+           mix-blend-difference border-2 border-white;
+    transition: width 0.3s, height 0.3s, transform 0.1s;
+  }
+
+  .custom-cursor.hover {
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .progress-ring {
+    transition: stroke-dashoffset 1.5s ease-in-out;
+  }
+
+  .skill-info {
+    @apply absolute inset-0 flex flex-col justify-center items-center
+           opacity-0 transition-opacity duration-300
+           bg-white/90 dark:bg-gray-800/90;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .skill-card:hover .skill-info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#3272d2] to-[#5690d4] text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-[#3272d2] text-[#3272d2] dark:border-[#5690d4] dark:text-[#5690d4] px-8 py-3 rounded-full hover:bg-[#3272d2]/10 dark:hover:bg-[#5690d4]/10 transition-colors;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#3272d2] to-[#5690d4];
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Efectos de profundidad */
+.depth-effect {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.depth-effect:hover {
+  transform: translateZ(20px);
+}
+
+/* Cursor personalizado para elementos interactivos */
+.cursor-hover {
+  cursor: none;
+}
+
+.cursor-hover:hover ~ .custom-cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  mix-blend-mode: difference;
+}
+
+/* Efecto de desenfoque para modales y overlays */
+.backdrop-blur {
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+}

@@ -1,0 +1,145 @@
+{
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Combining technical expertise with strategic vision",
+    "categories": {
+      "salesMarketing": "Sales & Marketing",
+      "aiAutomation": "AI & Automation",
+      "businessAnalysis": "Business Systems Analysis",
+      "dataReporting": "Data & Reporting"
+    },
+    "items": {
+      "leadGeneration": {
+        "name": "Lead Generation",
+        "description": "Strategies to capture and qualify potential customers."
+      },
+      "growthStrategies": {
+        "name": "Growth Strategies",
+        "description": "Scalable and sustainable growth methodologies."
+      },
+      "digitalCampaigns": {
+        "name": "Digital Campaigns",
+        "description": "Effective online marketing campaign management."
+      },
+      "chatbotDevelopment": {
+        "name": "Chatbot Development",
+        "description": "Intelligent chatbot solutions for enhanced interaction."
+      },
+      "aiProcessOptimization": {
+        "name": "AI Process Optimization",
+        "description": "Improving workflows with artificial intelligence."
+      },
+      "workflowAutomation": {
+        "name": "Workflow Automation",
+        "description": "Automating repetitive tasks for efficiency."
+      },
+      "requirementGathering": {
+        "name": "Requirement Gathering",
+        "description": "Collecting and documenting project requirements."
+      },
+      "systemMapping": {
+        "name": "System Mapping",
+        "description": "Visualizing and understanding system architectures."
+      },
+      "solutionDesign": {
+        "name": "Solution Design",
+        "description": "Crafting effective and innovative solutions."
+      },
+      "biTools": {
+        "name": "BI Tools",
+        "description": "Leveraging Business Intelligence tools for insights."
+      },
+      "advancedReporting": {
+        "name": "Advanced Reporting",
+        "description": "Creating detailed and insightful reports."
+      },
+      "dashboardAutomation": {
+        "name": "Dashboard Automation",
+        "description": "Automating dashboard updates and data feeds."
+      }
+    }
+  },
+  "navbar": {
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "language": "Language",
+    "languageTooltip": "Change language"
+  },
+  "hero": {
+    "title": "I'm Joel Mercado",
+    "subtitle": "Strategic Technical Consultant | Sales & Marketing | AI Automation",
+    "linkedinButton": "Connect on LinkedIn",
+    "viewPortfolioButton": "View Portfolio"
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "subtitle": "A selection of projects showcasing my capabilities and expertise",
+    "viewDetails": "View Details",
+    "projects": [
+      {
+        "title": "E-commerce Growth Strategy",
+        "category": "Marketing Strategy",
+        "description": "Developed and implemented a growth strategy for an e-commerce platform.",
+        "metrics": {
+          "roi": "+300%",
+          "timeline": "6 Months",
+          "growth": "150%"
+        }
+      },
+      {
+        "title": "Sales Team Restructuring",
+        "category": "Sales Management",
+        "description": "Restructured a sales team to improve efficiency and performance.",
+        "metrics": {
+          "roi": "+200%",
+          "timeline": "4 Months",
+          "efficiency": "+40%"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's discuss your project or inquiry",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "inquiryLabel": "Type of Inquiry",
+    "inquiryTypes": {
+      "sales": "Sales Inquiry",
+      "marketing": "Marketing Inquiry",
+      "custom": "Custom Inquiry"
+    },
+    "previewTitle": "Preview",
+    "prevButton": "Previous",
+    "nextButton": "Next",
+    "nameRequired": "Please enter your name.",
+    "emailInvalid": "Please enter a valid email.",
+    "messageRequired": "Please enter your message.",
+    "messageSent": "Message sent! We'll get back to you within 24 hours.",
+    "messageSuccess": "Thank you for your message!"
+  },
+  "about": {
+    "title": "About Me",
+    "highlightsText": "A summary of my skills and experience.",
+    "summaryTitle": "Summary",
+    "summaryText": "I am a strategic technical consultant with experience in sales, marketing, and AI automation.",
+    "educationTitle": "Education",
+    "educationText": "I have a degree in Computer Science from the University of Example.",
+    "educationProgress": "80",
+    "achievementsTitle": "Achievements",
+    "achievementsIntro": "Here are some of my achievements:",
+    "achievementsList": [
+      "Developed and implemented a growth strategy for an e-commerce platform.",
+      "Restructured a sales team to improve efficiency and performance."
+    ],
+    "achievementsProgress": "90",
+    "ctaPortfolio": "View Portfolio",
+    "ctaPortfolioDesc": "Check out my portfolio for more details."
+  },
+  "accessibility": {
+    "skipToMain": "Skip to main content"
+  }
+}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233b82f6' opacity='0.1'/%3E%3Cpath d='M11 8v9c0 2-1.5 3.5-3.5 3.5S4 19 4 17V8M17 8l6 6-6 6M17 14H11' stroke='%233b82f6' fill='none' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joel Mercado - Consultor Tecnológico</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YP1Q8L056X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YP1Q8L056X', { 'anonymize_ip': true });
+    </script>
+
+    <!-- reCAPTCHA -->
+    <script async defer data-cookieconsent="ignore" src="https://www.google.com/recaptcha/enterprise.js?render=6LcoAL8gAAAAADgDkqSaffLXflKwTrObOHysi"></script>
+    
+    <style>
+      @keyframes drawStroke {
+        0% {
+          stroke-dashoffset: 500;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          stroke-width: 1.5;
+          filter: drop-shadow(0 0 1px var(--primary-color));
+        }
+        50% {
+          stroke-width: 2;
+          filter: drop-shadow(0 0 3px var(--primary-color));
+        }
+        100% {
+          stroke-width: 1.5;
+          filter: drop-shadow(0 0 1px var(--primary-color));
+        }
+      }
+
+      @keyframes rotateArc {
+        from {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: -260;
+        }
+      }
+
+      .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--bg-color, white);
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .loader-svg {
+        width: 120px;
+        height: 120px;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .loader-circle {
+        fill: none;
+        stroke: var(--primary-color);
+        stroke-width: 1;
+        opacity: 0.1;
+      }
+
+      .loader-arc {
+        fill: none;
+        stroke: var(--primary-color);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-dasharray: 260;
+        opacity: 0.8;
+        animation: rotateArc 3s linear infinite;
+      }
+
+      .letters-group {
+        transform: scale(0.9) translate(12px, 8px);
+      }
+
+      .letter {
+        fill: none;
+        stroke: var(--primary-color);
+        stroke-width: 1.5;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke-dasharray: 500;
+        animation: 
+          drawStroke 2s ease forwards,
+          shimmer 3s ease-in-out infinite;
+      }
+
+      .letter-j {
+        animation-delay: 0s, 2s;
+      }
+
+      .letter-m {
+        animation-delay: 0.5s, 2s;
+      }
+
+      #root {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #root.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .preloader-exit .loader-svg {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .loader-container {
+          --bg-color: #111827;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader" class="fixed top-0 left-0 right-0 bottom-0 z-50">
+      <div class="loader-container">
+        <svg class="loader-svg" viewBox="0 0 100 100">
+          <!-- Círculo base -->
+          <circle class="loader-circle" cx="50" cy="50" r="42"/>
+          
+          <!-- Arco rotatorio -->
+          <path class="loader-arc" d="M50 8 A42 42 0 1 1 50 92 A42 42 0 1 1 50 8"/>
+          
+          <!-- Letras JM con animación secuencial -->
+          <g class="letters-group">
+            <path class="letter letter-j" d="M35 30v25c0 5-4 9-9 9s-9-4-9-9V30"/>
+            <path class="letter letter-m" d="M55 30l15 15-15 15M55 45h-15"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const root = document.getElementById('root');
+        const loaderContainer = document.querySelector('.loader-container');
+        
+        if (preloader && root && loaderContainer) {
+          setTimeout(() => {
+            // Iniciamos transición suave
+            loaderContainer.style.opacity = '0';
+            document.querySelector('.loader-svg').style.transform = 'translateY(-10px)';
+            
+            // Mostramos el contenido principal
+            root.classList.add('visible');
+            
+            // Removemos el preloader
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 600);
+          }, 2500);
+        }
+      });
+
+      // Actualizar color primario basado en el tema
+      const updateThemeColors = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        document.documentElement.style.setProperty('--primary-color', isDark ? '#60a5fa' : '#3b82f6');
+      };
+
+      // Observer para cambios en el tema
+      const observer = new MutationObserver(updateThemeColors);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      updateThemeColors();
+    </script>
+  </body>
+</html>
