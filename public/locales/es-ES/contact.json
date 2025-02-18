@@ -11,17 +11,32 @@
     "name": "Tu Nombre",
     "email": "Correo Electrónico",
     "message": "Tu Mensaje",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "submit": "Enviar mensaje",
+    "previousStep": "Volver al paso anterior",
     "placeholders": {
       "name": "Ingresa tu nombre",
       "email": "Ingresa tu correo electrónico",
       "message": "Escribe tu mensaje aquí"
     },
+    "validationError": "Error de validación",
+    "timeoutError": "El tiempo de espera se ha agotado. Por favor, inténtalo de nuevo.",
+    "tooManyRequests": "Has enviado demasiadas solicitudes. Por favor, espera unos minutos.",
+    "invalidData": "Los datos enviados no son válidos. Por favor, revisa el formulario.",
+    "serverError": "Error en el servidor. Por favor, inténtalo más tarde.",
+    "unknownError": "Error desconocido. Por favor, inténtalo de nuevo.",
+    "successTitle": "¡Gracias por tu mensaje!",
+    "successDescription": "Te responderemos lo antes posible.",
     "errors": {
       "nameRequired": "El nombre es obligatorio",
       "emailRequired": "El correo electrónico es obligatorio",
       "emailInvalid": "Por favor, ingresa un correo electrónico válido",
       "messageRequired": "El mensaje es obligatorio",
-      "formInvalid": "Por favor, completa todos los campos obligatorios correctamente"
+      "formInvalid": "Por favor, completa todos los campos obligatorios correctamente",
+      "honeypot": "Hemos detectado actividad sospechosa. Por favor, inténtalo de nuevo más tarde."
     }
   }
 }

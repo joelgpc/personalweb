@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "contact": {
+      "title": "Contact Me",
+      "description": "Have a project in mind? Let's discuss how I can help you make it happen."
+    }
+  },
+  "form": {
+    "steps": {
+      "name": {
+        "title": "What's your name?",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "title": "What's your email?",
+        "placeholder": "you@email.com"
+      },
+      "role": {
+        "title": "What do you do?",
+        "placeholder": "Your profession or role",
+        "options": {
+          "developer": "Developer",
+          "designer": "Designer",
+          "manager": "Product Manager",
+          "other": "Other"
+        }
+      },
+      "message": {
+        "title": "How can I help you?",
+        "placeholder": "Tell me about your project..."
+      }
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Continue",
+      "send": "Send message",
+      "pressEnter": "Press Enter ↵"
+    },
+    "errors": {
+      "name": {
+        "required": "Please enter your name",
+        "min": "Name must be at least 2 characters long"
+      },
+      "email": {
+        "required": "Please enter your email",
+        "invalid": "Please enter a valid email"
+      },
+      "role": {
+        "required": "Please indicate your role or profession"
+      },
+      "message": {
+        "required": "Please write a message",
+        "min": "Please write a more detailed message"
+      },
+      "submit": "An error occurred. Please try again."
+    },
+    "feedback": {
+      "title": "Thank you for reaching out!",
+      "message": "I'll get back to you as soon as possible"
+    }
+  }
+} 

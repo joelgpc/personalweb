@@ -7,11 +7,11 @@ interface Props {
 
 interface State {
   hasError: boolean;
-  error?: Error;
+  error: Error | undefined;
 }
 
 export class AnimationErrorBoundary extends Component<Props, State> {
-  public state: State = {
+  public override state: State = {
     hasError: false,
     error: undefined
   };
@@ -23,7 +23,7 @@ export class AnimationErrorBoundary extends Component<Props, State> {
     };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  public override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Animation error:', error);
     console.error('Error info:', errorInfo);
     
@@ -33,7 +33,7 @@ export class AnimationErrorBoundary extends Component<Props, State> {
     }, 2000);
   }
 
-  public render() {
+  public override render() {
     const { children, fallback } = this.props;
     const { hasError, error } = this.state;
 
