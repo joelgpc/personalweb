@@ -26,7 +26,6 @@ i18n
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
       lookupLocalStorage: 'i18nextLng',
-      nonExplicitWhitelist: true, // corrected placement of nonExplicitWhitelist
     },
     ns: ['translation'],
     defaultNS: 'translation',
