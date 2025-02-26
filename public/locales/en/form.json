@@ -1,0 +1,51 @@
+{
+  "steps": {
+    "1": {
+      "title": "What's your name?",
+      "description": "I'd like to know who I'm talking to",
+      "placeholder": "Type your name here",
+      "error": "Name is required"
+    },
+    "2": {
+      "title": "What's your email address?",
+      "description": "So we can stay in touch",
+      "placeholder": "name@example.com",
+      "error": "Please enter a valid email"
+    },
+    "3": {
+      "title": "How can I help you?",
+      "description": "Tell me more about your project or idea",
+      "placeholder": "Type your message here",
+      "error": "Message must be at least 10 characters"
+    }
+  },
+  "navigation": {
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Send message",
+    "pressEnter": "Press Enter ↵ to continue",
+    "pressEnterToSubmit": "Press Enter ↵ to send"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "minLength": "Minimum {{count}} characters",
+    "maxLength": "Maximum {{count}} characters"
+  },
+  "feedback": {
+    "success": {
+      "title": "Thank you for your message!",
+      "description": "I'll get back to you as soon as possible"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again",
+      "timeout": "Request timed out",
+      "server": "Server error. Please try later",
+      "validation": "Please check the marked fields"
+    }
+  },
+  "progress": {
+    "step": "Step {{current}} of {{total}}",
+    "chars": "{{count}} characters minimum"
+  }
+}

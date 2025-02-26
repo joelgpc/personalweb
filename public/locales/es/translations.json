@@ -1,0 +1,211 @@
+{
+  "common": {
+    "loading": "Cargando..."
+  },
+  "portfolio": {
+    "title": "Portafolio de Proyectos",
+    "subtitle": "Explora algunos de mis proyectos más destacados en consultoría tecnológica y transformación digital",
+    "viewDetails": "Ver Proyecto",
+    "allCategories": "Todas las Categorías",
+    "categories": {
+      "businessStrategy": "Estrategia de Negocio",
+      "digitalTransformation": "Transformación Digital",
+      "processOptimization": "Optimización de Procesos"
+    },
+    "metrics": {
+      "roi": "ROI",
+      "timeline": "Duración",
+      "growth": "Crecimiento",
+      "efficiency": "Eficiencia",
+      "impact": "Impacto",
+      "savings": "Ahorro",
+      "reduction": "Reducción"
+    },
+    "projects": [
+      {
+        "title": "Estrategia de Crecimiento E-commerce",
+        "category": "businessStrategy",
+        "description": "Desarrollo e implementación de estrategias de crecimiento para plataforma de comercio electrónico, logrando un incremento significativo en ventas y engagement.",
+        "metrics": {
+          "roi": "+150%",
+          "timeline": "6 meses",
+          "growth": "200%",
+          "impact": "Regional"
+        }
+      },
+      {
+        "title": "Transformación Digital Empresarial",
+        "category": "digitalTransformation",
+        "description": "Liderazgo en la transformación digital de procesos empresariales clave, implementando soluciones tecnológicas innovadoras y optimizando la eficiencia operativa.",
+        "metrics": {
+          "roi": "+80%",
+          "timeline": "8 meses",
+          "efficiency": "60%",
+          "savings": "45%"
+        }
+      },
+      {
+        "title": "Automatización de Procesos",
+        "category": "processOptimization",
+        "description": "Diseño e implementación de sistemas automatizados para optimizar procesos empresariales críticos, reduciendo costos y mejorando la precisión operativa.",
+        "metrics": {
+          "roi": "+120%",
+          "timeline": "4 meses",
+          "efficiency": "75%",
+          "reduction": "90%"
+        }
+      }
+    ]
+  },
+  "navigation": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "portfolio": "Portfolio",
+    "contact": "Contacto"
+  },
+  "navbar": {
+    "language": "Idioma",
+    "languageTooltip": "Cambiar idioma"
+  },
+  "hero": {
+    "title": "Joel Mercado",
+    "subtitle": "Consultor Tecnológico",
+    "linkedinButton": "LinkedIn",
+    "viewPortfolioButton": "Ver Portfolio"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "highlightsText": "Aspectos destacados",
+    "summaryTitle": "Resumen",
+    "summaryText": "Consultor tecnológico con experiencia en...",
+    "educationTitle": "Educación",
+    "educationText": "Formación académica y certificaciones...",
+    "educationProgress": "Progreso educativo",
+    "achievementsTitle": "Logros",
+    "achievementsIntro": "Principales logros y reconocimientos",
+    "achievementsList": [
+      "Logro 1",
+      "Logro 2",
+      "Logro 3"
+    ],
+    "achievementsProgress": "Progreso de logros",
+    "ctaPortfolioDesc": "Descubre mis proyectos",
+    "ctaPortfolio": "Ver Mi Portfolio"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Áreas de experiencia",
+    "categories": {
+      "salesMarketing": "Ventas y Marketing",
+      "aiAutomation": "IA y Automatización",
+      "businessAnalysis": "Análisis de Negocio",
+      "dataReporting": "Reportes y Datos"
+    },
+    "items": {
+      "leadGeneration": {
+        "name": "Generación de Leads",
+        "description": "Estrategias efectivas de generación de leads"
+      },
+      "growthStrategies": {
+        "name": "Estrategias de Crecimiento",
+        "description": "Desarrollo de estrategias de crecimiento empresarial"
+      },
+      "digitalCampaigns": {
+        "name": "Campañas Digitales",
+        "description": "Gestión de campañas digitales"
+      },
+      "chatbotDevelopment": {
+        "name": "Desarrollo de Chatbots",
+        "description": "Implementación de soluciones conversacionales"
+      },
+      "aiProcessOptimization": {
+        "name": "Optimización con IA",
+        "description": "Mejora de procesos mediante IA"
+      },
+      "workflowAutomation": {
+        "name": "Automatización de Flujos",
+        "description": "Automatización de procesos de trabajo"
+      },
+      "requirementGathering": {
+        "name": "Análisis de Requerimientos",
+        "description": "Captura y análisis de necesidades"
+      },
+      "systemMapping": {
+        "name": "Mapeo de Sistemas",
+        "description": "Documentación y mapeo de sistemas"
+      },
+      "solutionDesign": {
+        "name": "Diseño de Soluciones",
+        "description": "Arquitectura de soluciones empresariales"
+      },
+      "biTools": {
+        "name": "Herramientas BI",
+        "description": "Manejo de herramientas de Business Intelligence"
+      },
+      "advancedReporting": {
+        "name": "Reportes Avanzados",
+        "description": "Creación de reportes analíticos avanzados"
+      },
+      "dashboardAutomation": {
+        "name": "Automatización de Dashboards",
+        "description": "Creación de dashboards automatizados"
+      }
+    }
+  },
+  "form": {
+    "steps": {
+      "1": {
+        "title": "¿Cuál es tu nombre?",
+        "description": "Me gustaría conocerte mejor",
+        "placeholder": "Escribe tu nombre"
+      },
+      "2": {
+        "title": "¿Cuál es tu email?",
+        "description": "Para poder contactarte",
+        "placeholder": "tu@email.com"
+      },
+      "3": {
+        "title": "¿Cuál es tu mensaje?",
+        "description": "Cuéntame sobre tu proyecto o consulta",
+        "placeholder": "Escribe tu mensaje aquí"
+      }
+    },
+    "navigation": {
+      "back": "Atrás",
+      "next": "Continuar",
+      "submit": "Enviar",
+      "sending": "Enviando...",
+      "pressEnter": "Presiona Enter para continuar"
+    },
+    "validation": {
+      "name": "Por favor ingresa un nombre válido",
+      "email": {
+        "missingAt": "Por favor incluye un '@' en la dirección de correo",
+        "invalid": "Por favor ingresa una dirección de correo electrónico válida"
+      },
+      "message": "Por favor ingresa un mensaje de al menos 10 caracteres"
+    },
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Hubo un error al enviar el mensaje. Por favor intenta nuevamente.",
+    "thankYou": {
+      "title": "¡Gracias por tu mensaje!",
+      "message": "Me pondré en contacto contigo pronto.",
+      "button": "Volver al inicio"
+    },
+    "header": {
+      "title": "¿Hablamos de tu Proyecto?",
+      "subtitle": "Cuéntame sobre tus ideas y objetivos. Juntos podemos crear algo extraordinario. Completa el formulario y me pondré en contacto contigo lo antes posible."
+    },
+    "completion": {
+      "title": "¡Gracias!",
+      "message": "Hola {{name}}, he recibido tu mensaje. Me pondré en contacto contigo pronto para discutir los detalles de tu proyecto."
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Saltar al contenido principal"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad."
+  }
+}

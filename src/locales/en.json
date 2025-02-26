@@ -1,62 +1,72 @@
 {
   "sections": {
+    "hero": {
+      "title": "Hi, I'm Joel Mercado",
+      "subtitle": "Technology Consultant"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "..."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "..."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Here are some of my recent projects",
+      "viewDetails": "View Details"
+    },
     "contact": {
-      "title": "Contact Me",
+      "title": "Let's Talk",
       "description": "Have a project in mind? Let's discuss how I can help you make it happen."
     }
   },
   "form": {
     "steps": {
-      "name": {
+      "1": {
         "title": "What's your name?",
-        "placeholder": "Your name"
+        "placeholder": "Type your name",
+        "description": "I'd like to know you better"
       },
-      "email": {
+      "2": {
         "title": "What's your email?",
-        "placeholder": "you@email.com"
+        "placeholder": "you@email.com",
+        "description": "So I can get back to you"
       },
-      "role": {
+      "3": {
         "title": "What do you do?",
-        "placeholder": "Your profession or role",
-        "options": {
-          "developer": "Developer",
-          "designer": "Designer",
-          "manager": "Product Manager",
-          "other": "Other"
-        }
+        "placeholder": "Your role or profession",
+        "description": "Tell me about your work"
       },
-      "message": {
+      "4": {
         "title": "How can I help you?",
-        "placeholder": "Tell me about your project..."
+        "placeholder": "Tell me about your project...",
+        "description": "Briefly describe your idea or project"
       }
     },
     "navigation": {
       "back": "Back",
-      "next": "Continue",
-      "send": "Send message",
+      "next": "Continue →",
+      "send": "Send message ✨",
       "pressEnter": "Press Enter ↵"
     },
     "errors": {
-      "name": {
-        "required": "Please enter your name",
-        "min": "Name must be at least 2 characters long"
-      },
-      "email": {
-        "required": "Please enter your email",
-        "invalid": "Please enter a valid email"
-      },
-      "role": {
-        "required": "Please indicate your role or profession"
-      },
-      "message": {
-        "required": "Please write a message",
-        "min": "Please write a more detailed message"
-      },
-      "submit": "An error occurred. Please try again."
+      "name": "Please enter a valid name",
+      "email": "Please enter a valid email",
+      "role": "Please tell me about your role",
+      "message": "Please write a more detailed message",
+      "submit": "Something went wrong. Please try again."
     },
     "feedback": {
-      "title": "Thank you for reaching out!",
-      "message": "I'll get back to you as soon as possible"
+      "title": "Thank you for reaching out! ✨",
+      "message": "I'll get back to you soon"
     }
+  },
+  "navigation": {
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
   }
 } 

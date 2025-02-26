@@ -1,35 +1,43 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import path from 'path';
+import { visualizer } from 'rollup-plugin-visualizer';
+import compression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    compression({
+      algorithm: 'gzip',
+      ext: '.gz',
+    }),
+    compression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+    }),
+    visualizer({
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@contexts': path.resolve(__dirname, './src/contexts'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@data': path.resolve(__dirname, './src/data'),
     },
   },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
   server: {
+    port: 3000,
     watch: {
       usePolling: true,
     },
-    port: 3000,
-    strictPort: true,
-    host: true,
   },
   publicDir: 'public',
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'framer-motion', 'i18next', 'react-i18next'],
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -39,23 +47,27 @@ export default defineConfig({
       },
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion'],
+          vendor: ['react', 'react-dom'],
+          animations: ['framer-motion'],
           i18n: ['i18next', 'react-i18next'],
+          utils: ['lucide-react', 'react-intersection-observer'],
         },
       },
     },
     target: 'esnext',
-    sourcemap: true,
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
       },
     },
     cssMinify: true,
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000,
+    reportCompressedSize: false,
   },
   preview: {
     port: 4173,
@@ -63,3 +75,4 @@ export default defineConfig({
     host: true,
   },
 });
+

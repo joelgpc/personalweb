@@ -23,37 +23,43 @@
     <!-- reCAPTCHA -->
     <script async defer data-cookieconsent="ignore" src="https://www.google.com/recaptcha/enterprise.js?render=6LcoAL8gAAAAADgDkqSaffLXflKwTrObOHysi"></script>
     
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0284c7">
+    
     <style>
-      @keyframes drawStroke {
+      @keyframes drawHexagon {
         0% {
           stroke-dashoffset: 500;
+          opacity: 0;
         }
         100% {
           stroke-dashoffset: 0;
+          opacity: 1;
         }
       }
 
-      @keyframes shimmer {
+      @keyframes drawLetters {
         0% {
-          stroke-width: 1.5;
-          filter: drop-shadow(0 0 1px var(--primary-color));
+          stroke-dashoffset: 300;
+          opacity: 0;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+      }
+
+      @keyframes subtlePulse {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 2px var(--primary-color));
         }
         50% {
-          stroke-width: 2;
-          filter: drop-shadow(0 0 3px var(--primary-color));
-        }
-        100% {
-          stroke-width: 1.5;
-          filter: drop-shadow(0 0 1px var(--primary-color));
-        }
-      }
-
-      @keyframes rotateArc {
-        from {
-          stroke-dashoffset: 0;
-        }
-        to {
-          stroke-dashoffset: -260;
+          transform: scale(1.02);
+          filter: drop-shadow(0 0 4px var(--primary-color));
         }
       }
 
@@ -63,94 +69,95 @@
         align-items: center;
         min-height: 100vh;
         background: var(--bg-color, white);
-        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .loader-svg {
         width: 120px;
         height: 120px;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+        animation: subtlePulse 2s infinite ease-in-out;
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      .loader-circle {
+      .hexagon {
+        stroke: var(--primary-color, #0284c7);
+        stroke-width: 2;
         fill: none;
-        stroke: var(--primary-color);
-        stroke-width: 1;
-        opacity: 0.1;
-      }
-
-      .loader-arc {
-        fill: none;
-        stroke: var(--primary-color);
-        stroke-width: 1.5;
-        stroke-linecap: round;
-        stroke-dasharray: 260;
-        opacity: 0.8;
-        animation: rotateArc 3s linear infinite;
-      }
-
-      .letters-group {
-        transform: scale(0.9) translate(12px, 8px);
+        stroke-dasharray: 500;
+        animation: drawHexagon 1.5s ease forwards;
       }
 
       .letter {
+        stroke: var(--primary-color, #0284c7);
+        stroke-width: 3;
         fill: none;
-        stroke: var(--primary-color);
-        stroke-width: 1.5;
-        stroke-linejoin: round;
         stroke-linecap: round;
-        stroke-dasharray: 500;
-        animation: 
-          drawStroke 2s ease forwards,
-          shimmer 3s ease-in-out infinite;
+        stroke-linejoin: round;
+        stroke-dasharray: 300;
+        animation: drawLetters 1.5s ease forwards;
       }
 
       .letter-j {
-        animation-delay: 0s, 2s;
+        animation-delay: 0.3s;
       }
 
       .letter-m {
-        animation-delay: 0.5s, 2s;
+        animation-delay: 0.6s;
+      }
+
+      /* Animación de salida elegante */
+      .preloader-exit {
+        opacity: 0;
+        backdrop-filter: blur(8px);
+      }
+
+      .preloader-exit .loader-svg {
+        transform: scale(0.95) translateY(-30px);
+        opacity: 0;
+        filter: blur(4px);
       }
 
       #root {
         opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: blur(10px);
+        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       #root.visible {
         opacity: 1;
-        transform: translateY(0);
-      }
-
-      .preloader-exit .loader-svg {
-        transform: translateY(-10px);
-        opacity: 0;
+        filter: blur(0);
       }
 
       @media (prefers-color-scheme: dark) {
         .loader-container {
           --bg-color: #111827;
+          --primary-color: #38bdf8;
         }
       }
     </style>
   </head>
   <body>
-    <div id="preloader" class="fixed top-0 left-0 right-0 bottom-0 z-50">
+    <div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center">
       <div class="loader-container">
         <svg class="loader-svg" viewBox="0 0 100 100">
-          <!-- Círculo base -->
-          <circle class="loader-circle" cx="50" cy="50" r="42"/>
+          <!-- Hexágono base -->
+          <path 
+            class="hexagon" 
+            d="M50 10L85 30V70L50 90L15 70V30L50 10Z"
+          />
           
-          <!-- Arco rotatorio -->
-          <path class="loader-arc" d="M50 8 A42 42 0 1 1 50 92 A42 42 0 1 1 50 8"/>
+          <!-- La J -->
+          <path 
+            class="letter letter-j" 
+            d="M55 30V55C55 62 50 65 45 65"
+          />
           
-          <!-- Letras JM con animación secuencial -->
-          <g class="letters-group">
-            <path class="letter letter-j" d="M35 30v25c0 5-4 9-9 9s-9-4-9-9V30"/>
-            <path class="letter letter-m" d="M55 30l15 15-15 15M55 45h-15"/>
-          </g>
+          <!-- La M -->
+          <path 
+            class="letter letter-m" 
+            d="M25 65V35L35 50L45 35V65"
+          />
         </svg>
       </div>
     </div>
@@ -160,34 +167,33 @@
       window.addEventListener('load', function() {
         const preloader = document.getElementById('preloader');
         const root = document.getElementById('root');
-        const loaderContainer = document.querySelector('.loader-container');
         
-        if (preloader && root && loaderContainer) {
+        if (preloader && root) {
           setTimeout(() => {
-            // Iniciamos transición suave
-            loaderContainer.style.opacity = '0';
-            document.querySelector('.loader-svg').style.transform = 'translateY(-10px)';
-            
+            // Añadimos la clase para la animación de salida
+            preloader.classList.add('preloader-exit');
             // Mostramos el contenido principal
             root.classList.add('visible');
             
-            // Removemos el preloader
+            // Removemos el preloader después de la animación
             setTimeout(() => {
               preloader.style.display = 'none';
-            }, 600);
-          }, 2500);
+            }, 800);
+          }, 2000);
         }
       });
 
       // Actualizar color primario basado en el tema
       const updateThemeColors = () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        document.documentElement.style.setProperty('--primary-color', isDark ? '#60a5fa' : '#3b82f6');
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.style.setProperty(
+          '--primary-color', 
+          isDark ? '#38bdf8' : '#0284c7'
+        );
       };
 
-      // Observer para cambios en el tema
-      const observer = new MutationObserver(updateThemeColors);
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      // Observar cambios en el tema
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(updateThemeColors);
       updateThemeColors();
     </script>
   </body>

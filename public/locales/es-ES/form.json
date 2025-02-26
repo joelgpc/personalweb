@@ -1,0 +1,51 @@
+{
+  "steps": {
+    "1": {
+      "title": "¿Cómo te llamas?",
+      "description": "Me gustaría saber con quién estoy hablando",
+      "placeholder": "Escribe tu nombre aquí",
+      "error": "El nombre es obligatorio"
+    },
+    "2": {
+      "title": "¿Cuál es tu correo electrónico?",
+      "description": "Para poder mantener el contacto",
+      "placeholder": "nombre@ejemplo.com",
+      "error": "Por favor, introduce un email válido"
+    },
+    "3": {
+      "title": "¿En qué puedo ayudarte?",
+      "description": "Cuéntame más sobre tu proyecto o idea",
+      "placeholder": "Escribe tu mensaje aquí",
+      "error": "El mensaje debe tener al menos 10 caracteres"
+    }
+  },
+  "navigation": {
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar mensaje",
+    "pressEnter": "Presiona Enter ↵ para continuar",
+    "pressEnterToSubmit": "Presiona Enter ↵ para enviar"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Introduce un email válido",
+    "minLength": "Mínimo {{count}} caracteres",
+    "maxLength": "Máximo {{count}} caracteres"
+  },
+  "feedback": {
+    "success": {
+      "title": "¡Gracias por tu mensaje!",
+      "description": "Te responderé lo antes posible"
+    },
+    "error": {
+      "generic": "Algo salió mal. Por favor, inténtalo de nuevo",
+      "timeout": "El tiempo de espera se ha agotado",
+      "server": "Error en el servidor. Inténtalo más tarde",
+      "validation": "Por favor, revisa los campos marcados"
+    }
+  },
+  "progress": {
+    "step": "Paso {{current}} de {{total}}",
+    "chars": "{{count}} caracteres mínimo"
+  }
+}

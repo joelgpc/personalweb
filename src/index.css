@@ -237,3 +237,8 @@
   backdrop-filter: blur(var(--blur-strength));
   -webkit-backdrop-filter: blur(var(--blur-strength));
 }
+
+/* Asegúrate de que el contenedor principal tenga una posición no estática */
+#root {
+  position: relative;
+}

@@ -9,34 +9,50 @@
     "captchaError": "CAPTCHA verification failed. Please try again.",
     "captchaLabel": "CAPTCHA Verification",
     "name": "Your Name",
-    "email": "Email Address",
+    "email": "Email",
     "message": "Your Message",
     "previous": "Previous",
     "next": "Next",
     "send": "Send",
     "sending": "Sending...",
     "submit": "Send message",
-    "previousStep": "Go back to previous step",
+    "previousStep": "Back to previous step",
     "placeholders": {
-      "name": "Enter your name",
-      "email": "Enter your email address",
-      "message": "Write your message here"
+      "name": "Type your name here",
+      "email": "name@example.com",
+      "message": "How can I help you?"
     },
+    "questions": {
+      "name": "What's your name?",
+      "email": "What's your email address?",
+      "message": "How can I help you?"
+    },
+    "descriptions": {
+      "name": "I'd like to know who I'm talking to",
+      "email": "So we can stay in touch",
+      "message": "Tell me more about your project or idea"
+    },
+    "hints": {
+      "pressEnter": "Press Enter ↵ to continue",
+      "pressEnterToSubmit": "Press Enter ↵ to send message"
+    },
+    "chars": "characters minimum",
     "validationError": "Validation error",
     "timeoutError": "Request timed out. Please try again.",
     "tooManyRequests": "Too many requests. Please wait a few minutes.",
-    "invalidData": "Invalid data submitted. Please check the form.",
+    "invalidData": "The submitted data is invalid. Please check the form.",
     "serverError": "Server error. Please try again later.",
     "unknownError": "Unknown error. Please try again.",
     "successTitle": "Thank you for your message!",
-    "successDescription": "We'll get back to you as soon as possible.",
+    "successDescription": "I'll get back to you as soon as possible.",
     "errors": {
       "nameRequired": "Name is required",
       "emailRequired": "Email is required",
       "emailInvalid": "Please enter a valid email address",
       "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters long",
       "formInvalid": "Please complete all required fields correctly",
-      "honeypot": "Suspicious activity detected. Please try again later."
+      "honeypot": "We've detected suspicious activity. Please try again later."
     }
   }
 }

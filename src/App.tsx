@@ -1,39 +1,64 @@
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import Footer from './components/Footer';
-import HeroComponent from './components/Hero';
+import { useState, useEffect, lazy, Suspense } from 'react';
+import { Preloader } from './components/Preloader';
 import Navbar from './components/Navbar';
-import { Portfolio } from './components/Portfolio';
-import Skills from './components/Skills';
-import { ToastProvider } from './contexts/ToastContext';
-import { ThemeProvider } from './contexts/ThemeContext';
-import ErrorBoundary from './components/ErrorBoundary';
-import { useRef } from 'react';
+import LoadingSpinner from './components/LoadingSpinner';
+
+// Lazy load components
+const HeroComponent = lazy(() => import('./components/Hero'));
+const About = lazy(() => import('./components/About'));
+const Skills = lazy(() => import('./components/Skills'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 const App = () => {
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const portfolioRef = useRef(null);
-  const contactRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Asegurar que la página comience desde el inicio
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+      });
+    };
+    
+    // Ejecutar inmediatamente y después del timeout de carga
+    scrollToTop();
+    if (!isLoading) {
+      scrollToTop();
+    }
+  }, [isLoading]);
 
   return (
-    <ThemeProvider>
-      <ToastProvider>
-        <ErrorBoundary>
-          <div className="bg-lightBackground dark:bg-darkBackground min-h-screen text-lightText dark:text-darkText antialiased">
-            <Navbar aboutRef={aboutRef} skillsRef={skillsRef} portfolioRef={portfolioRef} contactRef={contactRef} />
-            <main id="main">
-              <HeroComponent />
-              <About />
-              <Skills />
-              <Portfolio />
-              <Contact />
-            </main>
-            <Footer />
-          </div>
-        </ErrorBoundary>
-      </ToastProvider>
-    </ThemeProvider>
+    <>
+      <Preloader isLoading={isLoading} />
+      <div className="relative bg-lightBackground dark:bg-darkBackground min-h-screen text-lightText dark:text-darkText antialiased">
+        <Navbar />
+        <Suspense fallback={<LoadingSpinner />}>
+          <main className="relative">
+            <HeroComponent />
+            <About />
+            <Skills />
+            <Portfolio />
+            <Contact />
+          </main>
+          <Footer />
+        </Suspense>
+      </div>
+    </>
   );
 };
 

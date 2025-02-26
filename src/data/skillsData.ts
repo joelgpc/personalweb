@@ -1,9 +1,12 @@
+import { Key } from 'react';
+
 export interface SkillItem {
   key: string;
   level: number;
 }
 
 export interface Category {
+  id: Key | null | undefined;
   key: string;
   title: string;
   icon: string;
@@ -12,6 +15,7 @@ export interface Category {
 
 export const categories: Category[] = [
   {
+    id: 'salesMarketing',
     key: 'salesMarketing',
     title: 'skills.categories.salesMarketing',
     icon: '💼',
@@ -22,6 +26,7 @@ export const categories: Category[] = [
     ]
   },
   {
+    id: 'aiAutomation',
     key: 'aiAutomation',
     title: 'skills.categories.aiAutomation',
     icon: '🤖',
@@ -32,6 +37,7 @@ export const categories: Category[] = [
     ]
   },
   {
+    id: 'businessAnalysis',
     key: 'businessAnalysis',
     title: 'skills.categories.businessAnalysis',
     icon: '📊',
@@ -42,12 +48,12 @@ export const categories: Category[] = [
     ]
   },
   {
+    id: 'dataReporting',
     key: 'dataReporting',
     title: 'skills.categories.dataReporting',
     icon: '📈',
     skills: [
       { key: 'biTools', level: 88 },
-      { key: 'advancedReporting', level: 90 },
       { key: 'dashboardAutomation', level: 85 }
     ]
   }

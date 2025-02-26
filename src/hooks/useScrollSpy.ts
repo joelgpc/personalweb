@@ -1,48 +1,70 @@
 import { useEffect, useState } from 'react';
 
-interface UseScrollSpyProps {
-  sectionElementRefs: React.RefObject<HTMLElement>[];
-  offsetPx?: number;
-}
-
-export function useScrollSpy({ sectionElementRefs, offsetPx = 0 }: UseScrollSpyProps): string | null {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+export const useScrollSpy = (ids: string[]) => {
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
-      const viewHeight = window.innerHeight;
+      // Obtener la altura del viewport
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      
+      const sections = ids.map(id => {
+        const element = document.getElementById(id);
+        if (!element) return null;
+        
+        const rect = element.getBoundingClientRect();
+        const offset = rect.top + scrollPosition;
+        const height = rect.height;
+        
+        return {
+          id,
+          offset,
+          height
+        };
+      }).filter(Boolean);
 
-      // Encontrar la sección más visible actualmente
-      let maxVisibleSection = null;
-      let maxVisibleArea = 0;
-
-      sectionElementRefs.forEach((ref) => {
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          const visibleHeight = Math.min(rect.bottom, viewHeight) - Math.max(rect.top, 0);
-          
-          // Ajustar el área visible según el offset
-          const adjustedVisibleHeight = visibleHeight - (offsetPx || 0);
-
-          if (adjustedVisibleHeight > maxVisibleArea) {
-            maxVisibleArea = adjustedVisibleHeight;
-            maxVisibleSection = ref.current.id;
-          }
+      // Encontrar la sección activa basada en la posición del scroll
+      const currentSection = sections.find((section, index) => {
+        const nextSection = sections[index + 1];
+        const sectionTop = section!.offset;
+        const viewThreshold = viewportHeight * 0.3; // 30% del viewport
+        
+        if (!nextSection) {
+          // Para la última sección
+          return scrollPosition + viewThreshold >= sectionTop;
         }
+        
+        const sectionBottom = nextSection.offset;
+        return scrollPosition + viewThreshold >= sectionTop && scrollPosition + viewThreshold < sectionBottom;
       });
 
-      setActiveSection(maxVisibleSection);
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
     };
 
-    // Agregar listener para el scroll
+    // Manejar el scroll inicial
+    const handleInitialScroll = () => {
+      handleScroll();
+      // Desactivar el listener después del primer scroll
+      window.removeEventListener('load', handleInitialScroll);
+    };
+
+    // Escuchar eventos
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Llamada inicial para establecer la sección activa
+    window.addEventListener('load', handleInitialScroll);
+    window.addEventListener('resize', handleScroll, { passive: true });
+
+    // Ejecutar una vez al montar
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('load', handleInitialScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-  }, [sectionElementRefs, offsetPx]);
+  }, [ids]);
 
   return activeSection;
-}
+};

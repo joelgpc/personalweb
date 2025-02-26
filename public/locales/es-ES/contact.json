@@ -18,10 +18,25 @@
     "submit": "Enviar mensaje",
     "previousStep": "Volver al paso anterior",
     "placeholders": {
-      "name": "Ingresa tu nombre",
-      "email": "Ingresa tu correo electrónico",
-      "message": "Escribe tu mensaje aquí"
+      "name": "Escribe tu nombre aquí",
+      "email": "nombre@ejemplo.com",
+      "message": "¿En qué puedo ayudarte?"
     },
+    "questions": {
+      "name": "¿Cómo te llamas?",
+      "email": "¿Cuál es tu correo electrónico?",
+      "message": "¿En qué puedo ayudarte?"
+    },
+    "descriptions": {
+      "name": "Me gustaría saber con quién estoy hablando",
+      "email": "Para poder mantener el contacto",
+      "message": "Cuéntame más sobre tu proyecto o idea"
+    },
+    "hints": {
+      "pressEnter": "Presiona Enter ↵ para continuar",
+      "pressEnterToSubmit": "Presiona Enter ↵ para enviar el mensaje"
+    },
+    "chars": "caracteres mínimo",
     "validationError": "Error de validación",
     "timeoutError": "El tiempo de espera se ha agotado. Por favor, inténtalo de nuevo.",
     "tooManyRequests": "Has enviado demasiadas solicitudes. Por favor, espera unos minutos.",
@@ -29,12 +44,13 @@
     "serverError": "Error en el servidor. Por favor, inténtalo más tarde.",
     "unknownError": "Error desconocido. Por favor, inténtalo de nuevo.",
     "successTitle": "¡Gracias por tu mensaje!",
-    "successDescription": "Te responderemos lo antes posible.",
+    "successDescription": "Te responderé lo antes posible.",
     "errors": {
       "nameRequired": "El nombre es obligatorio",
       "emailRequired": "El correo electrónico es obligatorio",
       "emailInvalid": "Por favor, ingresa un correo electrónico válido",
       "messageRequired": "El mensaje es obligatorio",
+      "messageTooShort": "El mensaje debe tener al menos 10 caracteres",
       "formInvalid": "Por favor, completa todos los campos obligatorios correctamente",
       "honeypot": "Hemos detectado actividad sospechosa. Por favor, inténtalo de nuevo más tarde."
     }

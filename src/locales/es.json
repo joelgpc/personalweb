@@ -37,33 +37,37 @@
   },
   "sections": {
     "contact": {
-      "title": "Contáctame",
-      "description": "¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a hacerlo realidad."
+      "title": "Hablemos",
+      "description": "¿Tienes un proyecto en mente? Cuéntame cómo puedo ayudarte."
     }
   },
   "form": {
     "steps": {
       "1": {
         "title": "¿Cómo te llamas?",
-        "placeholder": "Tu nombre"
+        "placeholder": "Escribe tu nombre",
+        "description": "Me gustaría conocerte mejor"
       },
       "2": {
         "title": "¿Cuál es tu email?",
-        "placeholder": "tu@email.com"
+        "placeholder": "tu@email.com",
+        "description": "Para poder contactarte"
       },
       "3": {
         "title": "¿A qué te dedicas?",
-        "placeholder": "Tu profesión o rol"
+        "placeholder": "Tu profesión o rol",
+        "description": "Cuéntame sobre tu trabajo"
       },
       "4": {
         "title": "¿En qué puedo ayudarte?",
-        "placeholder": "Cuéntame sobre tu proyecto..."
+        "placeholder": "Cuéntame sobre tu proyecto...",
+        "description": "Describe brevemente tu idea o proyecto"
       }
     },
     "navigation": {
       "back": "Atrás",
-      "next": "Continuar",
-      "send": "Enviar mensaje",
+      "next": "Continuar →",
+      "send": "Enviar mensaje ✨",
       "pressEnter": "Presiona Enter ↵"
     },
     "errors": {
@@ -85,8 +89,8 @@
       "submit": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
     },
     "feedback": {
-      "title": "¡Gracias por contactarme!",
-      "message": "Me pondré en contacto contigo lo antes posible"
+      "title": "¡Gracias por escribirme! ✨",
+      "message": "Me pondré en contacto contigo pronto"
     }
   }
 } 

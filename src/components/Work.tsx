@@ -1,51 +1,54 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowUpRight } from 'lucide-react';
+import { lazy, Suspense } from 'react';
 
 const projects = [
   {
     title: 'Future Vision',
     category: 'Brand Identity',
-    image: 'https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80&w=800',
     color: 'from-purple-600 to-blue-600',
     size: 'large'
   },
   {
     title: 'Urban Pulse',
     category: 'Digital Campaign',
-    image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&q=80&w=800',
     color: 'from-blue-600 to-cyan-600',
     size: 'small'
   },
   {
     title: 'Eco Future',
     category: 'Website Design',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
     color: 'from-cyan-600 to-teal-600',
     size: 'medium'
   },
   {
     title: 'Tech Innovate',
     category: 'Product Launch',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
     color: 'from-teal-600 to-green-600',
     size: 'small'
   },
   {
     title: 'Creative Flow',
     category: 'Art Direction',
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800',
     color: 'from-red-600 to-orange-600',
     size: 'medium'
   },
   {
     title: 'Digital Dreams',
     category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
     color: 'from-orange-600 to-yellow-600',
     size: 'large'
   }
 ];
+
+const ProjectImage = lazy(() => import('./ProjectImage'));
 
 const getSizeClass = (size: string) => {
   switch (size) {
@@ -91,11 +94,15 @@ export default function Work() {
               className={`group relative w-full ${getSizeClass(project.size)} mb-6 overflow-hidden rounded-2xl cursor-pointer`}
             >
               <div className="absolute inset-0 bg-black/60 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-40" />
-              <img
-                src={project.image}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
+              <Suspense fallback={<div className="w-full h-full bg-gray-800 animate-pulse" />}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              </Suspense>
               <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-60 mix-blend-multiply group-hover:opacity-40 transition-opacity duration-300`} />
               
               <div className="absolute inset-0 p-8 flex flex-col justify-between">

@@ -48,3 +48,19 @@ export interface ContactStepEmailProps extends BaseStepProps {
 export interface ContactStepMessageProps extends BaseStepProps {
   // Mantiene onKeyDown como opcional
 }
+
+export interface NavigationButtonsProps {
+  currentStep: number;
+  totalSteps: number;
+  onNext: () => void;
+  onPrevious: () => void;
+  isValid: boolean;
+  isLastStep?: boolean;
+}
+
+export interface FormData {
+  name: string;
+  email: string;
+  role: string;
+  message: string;
+}
